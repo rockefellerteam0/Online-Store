@@ -1,0 +1,144 @@
+/* =========================================================
+   FONTS
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+
+/* =========================================================
+   COLORS
+   ========================================================= */
+
+:root {
+    --olive: #29362A;
+    --olive-light: #43533E;
+    --olive-muted: #596650;
+
+    --terracotta: #B86C40;
+    --terracotta-light: #C47A4A;
+
+    --cream: #FCFAF5;
+    --cream-dark: #F6F1E8;
+
+    --text: #252821;
+    --text-muted: #777A70;
+
+    --border: #E5E0D7;
+}
+
+
+/* =========================================================
+   COLOR CLASSES
+   ========================================================= */
+
+.bg-olive {
+    background-color: var(--olive);
+}
+
+.bg-olive-light {
+    background-color: var(--olive-light);
+}
+
+.bg-terracotta {
+    background-color: var(--terracotta);
+}
+
+.bg-cream {
+    background-color: var(--cream);
+}
+
+.bg-cream-dark {
+    background-color: var(--cream-dark);
+}
+
+.text-olive {
+    color: var(--olive);
+}
+
+.text-olive-light {
+    color: var(--olive-light);
+}
+
+.text-terracotta {
+    color: var(--terracotta);
+}
+
+.text-main {
+    color: var(--text);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.border-custom {
+    border-color: var(--border);
+}
+
+
+/* =========================================================
+   FONTS
+   ========================================================= */
+
+.font-heading {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.font-script {
+    font-family: 'Allura', cursive;
+}
+
+
+/* =========================================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================================= */
+
+.text-hero {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    line-height: 0.98;
+}
+
+.text-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+}
+
+.text-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
+    line-height: 1.2;
+}
+
+.text-body-responsive {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.container-main {
+    width: min(100% - 2rem, 1280px);
+    margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+    .container-main {
+        width: min(100% - 4rem, 1280px);
+    }
+}
+
+@media (min-width: 1440px) {
+    .container-main {
+        width: min(100% - 6rem, 1380px);
+    }
+}
