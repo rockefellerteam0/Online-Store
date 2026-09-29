@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+    <div class="page conta">
+
+        <!-- Header -->
+        <header class="heder">
+            <div class="brand">اونلاين ستور</div>
+
+            <div class="main-nav">
+                <a href="#">الرئيسية</a>
+                <a href="#">المحل</a>
+                <a href="#">الايميلات</a>
+                <a href="#"> تواصل معنا</a>
+                <a href="#">عن المتجر</a>
+            </div>
+
+            <div class="top-actions">
+                <button class="profile-btn"> صفحة الادمن</button>
+                <span class="icon">⌕</span>
+                <span class="icon">◌</span>
+                <span class="icon">◔</span>
+            </div>
+        </header>
+
+    
+
+         <!-- body -->
+        <section class="dashboard-body">
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="inner-sidebar">
+                    <a class="active" href="#">لوحة التحكم</a>
+                    <a href="#">المنتجات</a>
+                    <a href="#">الطلبات</a>
+                    <a href="#">الزبائن</a>
+                    <a href="#">الرؤى</a>
+                    <a href="#">المدونة</a>
+                    <a href="#">الإعدادات</a>
+                </div>
+            </aside>
+
+            <!-- chart -->
+            <div class="content">
+
+                
+                <section class="content-chart">
+                    <div class="stat-card">
+                        <div class="stat-label">كامل المبيعات  ($)</div>
+                        <div class="stat-value">$1,646</div>
+                        <div class="stat-footer">كامل المبيعات </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-label">كل الطلبات </div>
+                        <div class="stat-value">29</div>
+                        <div class="stat-footer"> كل الطلبات</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-label">الزائرين الفعالين </div>
+                        <div class="stat-value">90</div>
+                        <div class=""> الزائرين الفعالين</div>
+                    </div>
+
+                    <div class="card4">
+                        <h3 class="">الإيرادات ($)</h3>
+                        <p class="">$328.00</p>
+                        <button class="button-primary">الإيرادات</button>
+                    </div>
+                </section>
+
+
+
+                            <!-- chart-card -->
+                <section class="chart-card">
+                    <h3>اتجاه المبيعات </h3>
+                                <div class="chart-canvas-wrap">
+                                    <canvas id="sales-chart" role="img" aria-label="رسم بياني لاتجاه المبيعات"></canvas>
+                           </div>
+                </section>
+
+                <!-- Orders  -->
+                <section class="orders-card">
+                    <h3>الطلبات الأخيرة</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> رقم الطلب</th>
+                                <th>الزبون</th>
+                                <th>التاريخ</th>
+                                <th>الحالة</th>
+                                <th>الإجمالي</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01104001</td>
+                                <td>عميل ماهر </td>
+                                <td>20th Sep, 2026</td>
+                                <td><span class="status processing">في تقدم</span></td>
+                                <td>$700.00</td>
+                            </tr>
+                            <tr>
+                                <td>5646546</td>
+                                <td>عميل جديد</td>
+                                <td>24 Sep, 2024</td>
+                                <td><span class="status shipped">تم الشحن</span></td>
+                                <td>$24.50</td>
+                            </tr>
+                            <tr>
+                                <td>92246</td>
+                                <td>عميل رامي</td>
+                                <td>20th Sep, 2021</td>
+                                <td><span class="status delivered">تم التوصيل</span></td>
+                                <td>$436.00</td>
+                            </tr>
+                            <tr>
+                                <td>2324</td>
+                                <td>عميل سارة</td>
+                                <td>20th Sep, 2015</td>
+                                <td><span class="status delivered">تم التوصيل</span></td>
+                                <td>$122.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <script>
+        const salesChart = document.getElementById('sales-chart');
+
+        new Chart(salesChart, {
+            type: 'line',
+            data: {
+                labels: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر'],
+                datasets: [{
+                    data: [12, 18, 15, 26, 22, 31, 18, 20, 34, 28],
+                    borderColor: '#B86C40',
+                    backgroundColor: 'rgba(184, 108, 64, 0.16)',
+                    pointBackgroundColor: '#29362A',
+                    pointBorderColor: '#FCFAF5',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 6,
+                    borderWidth: 3,
+                    tension: 0.38,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { rtl: true }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#777A70' }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(89, 102, 80, 0.16)' },
+                        ticks: { color: '#777A70' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
