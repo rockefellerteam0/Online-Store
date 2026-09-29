@@ -156,3 +156,8 @@
         width: min(100% - 6rem, 1380px);
     }
 }
+
+
+.inner {
+    background-color: #596650;
+}
